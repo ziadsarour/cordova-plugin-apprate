@@ -262,7 +262,8 @@ AppRate = (function() {
     if (/(iPhone|iPod|iPad)/i.test(navigator.userAgent.toLowerCase())) {
       if (this.preferences.inAppReview) {
         updateiOSRatingData();
-        var showNativePrompt = iOSRating.timesPrompted < 3;
+        // var showNativePrompt = iOSRating.timesPrompted < 3;
+        var showNativePrompt = true;
         exec(null, null, 'AppRate', 'launchiOSReview', [this.preferences.storeAppURL.ios, showNativePrompt]);
       } else {
         iOSVersion = navigator.userAgent.match(/OS\s+([\d\_]+)/i)[0].replace(/_/g, '.').replace('OS ', '').split('.');
